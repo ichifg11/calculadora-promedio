@@ -27,10 +27,15 @@ jobs:
           pip install flet==0.25.0
 
       - name: Build APK
-        run: flet build apk src
+        # Añadimos --verbose para que nos diga exactamente qué hace si falla
+        run: flet build apk src --verbose
+
+      - name: Inspect Directory (Para nosotros saber qué pasó)
+        run: ls -R
 
       - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
           name: mi_app_notas
-          path: build/apk/*.apk
+          # El cambio definitivo: busca en TODO el repositorio cualquier .apk
+          path: "**/*.apk"
