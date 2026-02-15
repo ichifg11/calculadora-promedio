@@ -1,5 +1,4 @@
-from turtle import bgcolor
-from classes import Estudiante, Materia, Evaluacion
+
 import flet as ft
 import logic
 
@@ -797,4 +796,4 @@ def main(page:ft.Page):
     )
 
 if __name__ == "__main__":
-    ft.app(target=main)
+    ft.app(target=main, view=ft.WEB_BROWSER)
