@@ -33,4 +33,4 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: mi_app_notas
-          path: build/apk/*.apk
+          path: build/**/*.apk
